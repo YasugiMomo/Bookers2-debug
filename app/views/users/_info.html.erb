@@ -8,14 +8,14 @@
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
   </tr>
-  <!--フォロー・フォロワー数-->
+  <!--フォロー・フォロワー数　一覧へのリンク-->
   <tr>
     <th>フォロー数: </th>
-    <th><%= link_to user.followings.count  %></th>
+    <th><%= link_to user.followings.count, user_followings_path(user) %></th>
   </tr>
   <tr>
     <th>フォロワー数: </th>
-    <th><%= link_to user.followers.count  %></th>
+    <th><%= link_to user.followers.count, user_followers_path(user) %></th>
   </tr>
 </table>
 
