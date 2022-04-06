@@ -3,8 +3,21 @@
     <table>
       <thead>
         <tr>
+          <th>image</th>
           <th>name</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <tr>
+          <td><%= image_tag user.get_profile_image, size:'100x100' %></td>
+          <td><%= user.name %></td>
+          <td>フォロー数: <%= user.followings.count %></td>
+          <td>フォロワー数: <%= user.followers.count %></td>
+          <td><%= link_to 'Show', user, class: "user_#{user.id}" %></td>
+        </tr>
+      </tbody>
     </table>
+    <% end %>
+  <% else %>
+    <p>None User</p>
+  <% end %>
